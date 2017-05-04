@@ -16,4 +16,4 @@ tmp=`dirname $PWD`
 my_scientist=`basename $tmp`
 tmp=`dirname $tmp`
 my_lab=`basename $tmp`
-sqlite3 $my_projects/projects.db "insert into commits (hash,path,date,subject,lab,scientist,project) values (\"$my_hash\",\"$my_path\",\"$my_date\",\"$my_subject\",\"$my_lab\",\"$my_scientist\",\"$my_project\");"
+sqlite3 $my_working/projects.db "insert into commits (hash,path,date,subject,lab,scientist,project) values (\"$my_hash\",\"$my_path\",\"$my_date\",\"$my_subject\",\"$my_lab\",\"$my_scientist\",\"$my_project\");"
