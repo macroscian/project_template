@@ -1,6 +1,6 @@
-library(tidyverse)
-library(devtools)
-if (grepl("thecrick", Sys.info()['nodename'])) {
+lapply(c("tidyverse", "devtools"),
+       require, character=TRUE, quietly=TRUE)
+if (grepl("thecrick", Sys.info()['nodename']) && Sys.getenv("my_r_package")!="") {
   load_all(Sys.getenv("my_r_package"))
 } else {
   install_github("macroscian/R-Package")
