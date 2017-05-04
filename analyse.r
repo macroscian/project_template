@@ -14,8 +14,9 @@ params <- params_init(title="",
 
 
 set.seed(seed=params("seed"))
-dirs <- derivedDirs()
-
+dirs <- derivedDirs(publish=params()$release, subResults=params()$fVersion)
+dir.create(dirs$output, recursive=TRUE, mode="0755")
+dir.create(dirs$results, recursive=TRUE, mode="0755")
 
 ################################################################
 #### Do Analysis
