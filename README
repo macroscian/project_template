@@ -1,0 +1,27 @@
+#+STARTUP: showall
+** SCRIPTS
+| Filename       | Notes           |
+|----------------+-----------------|
+| file:analyse.r | Analysis Script |
+|                |                 |
+|----------------+-----------------|
+
+** Auto-generated files
+| Filename        | Notes                           |
+|-----------------+---------------------------------|
+| sessionInfo.rds | Record of r environment         |
+| libPaths.rds    | Where packages were loaded from |
+| VERSION         | git version number              |
+| CHANGES         | git history                     |
+|-----------------+---------------------------------|
+
+
+** DIRECTORIES
+| Directory | Notes                                |
+|-----------+--------------------------------------|
+| data      | Scientist-supplied data for analysis |
+| results   | script-generated results-files       |
+| objects   | intermediate calculations            |
+|-----------+--------------------------------------|
+
+
