@@ -30,5 +30,13 @@ dir.create(dirs$results, recursive=TRUE, mode="0755")
 ################################################################
 
 dframe <- t(as.data.frame(params()))
-fname <- sprintf("%s/results_%s.xls", dirs$results,  params()$fVersion)
+fname <- file.path(dirs$results, sprintf("results_%s.xls",  params()$fVersion))
+fname <- file.path(dirs$output, sprintf("results_%s.xls", params()$fVersion))
 write.xlsx(dframe, file=fname, sheetName="Parameters", col.names=FALSE)
+
+saveRDS(sessionInfo(), file="sessionInfo.rds")
+saveRDS(.libPaths(), file="libPaths.rds")
+tmp <- session_info()
+write.xlsx2(as.data.frame(tmp$packages), file=fname, sheetName="R Packages", row.names=FALSE, append=TRUE)
+tmp <- tmp$platform
+write.xlsx2(data.frame(setting = names(tmp), value = unlist(tmp), stringsAsFactors = FALSE), file=fname, sheetName="R Settings", row.names=FALSE, append=TRUE)
