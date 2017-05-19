@@ -1,0 +1,7 @@
+#!/bin/sh
+source modules.sh
+for i in "${module_array[@]}"
+do
+	module load $i
+done
+R "$@"
